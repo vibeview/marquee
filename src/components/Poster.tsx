@@ -5,8 +5,8 @@ import type { Title } from '../data';
 import { POSTERS } from '../posters';
 import { colors, focusRingWidth, s } from '../theme';
 
-export const POSTER_WIDTH = s(200);
-export const POSTER_HEIGHT = s(300);
+export const POSTER_WIDTH = s(148);
+export const POSTER_HEIGHT = s(222);
 
 type Props = {
   title: Title;
@@ -48,7 +48,7 @@ export function Poster({ title, preferred, onFocus, onPress }: Props) {
 const styles = StyleSheet.create({
   slot: {
     width: POSTER_WIDTH,
-    marginRight: s(28),
+    marginRight: s(24),
     alignItems: 'center',
   },
   slotFocused: {
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   caption: {
-    marginTop: s(10),
-    fontSize: s(20),
+    marginTop: s(8),
+    fontSize: s(18),
     color: colors.inkSecondary,
     maxWidth: POSTER_WIDTH,
   },

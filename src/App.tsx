@@ -2,7 +2,7 @@ import { DarkTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useEffect } from 'react';
-import { StatusBar } from 'react-native';
+import { LogBox, StatusBar } from 'react-native';
 
 import type { RootStackParamList } from './navigation';
 import { DetailScreen } from './screens/DetailScreen';
@@ -25,6 +25,10 @@ const theme = {
 };
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
+
+// AsyncStorage warns once on tvOS that storage is cache-only. Known platform
+// behaviour, nothing to act on, and the dev banner would cover the header.
+LogBox.ignoreLogs(['Persistent storage is not supported on tvOS']);
 
 function Root() {
   const { loaded } = useMyList();
