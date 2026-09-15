@@ -4,14 +4,14 @@
   "metroCommand": "npm start",
   "platforms": {
     "tvos": {
+      "appId": "marquee-cv6ujm4n",
       "build": {
         "command": "npm ci && npx expo prebuild --platform ios && xcodebuild -workspace ios/Marquee.xcworkspace -scheme Marquee -configuration Debug -sdk appletvsimulator -derivedDataPath ios/build CODE_SIGNING_ALLOWED=NO",
         "artifact": "ios/build/Build/Products/Debug-appletvsimulator/*.app",
         "env": {
           "EXPO_TV": "1"
         }
-      },
-      "appId": "marquee-cv6ujm4n"
+      }
     },
     "androidtv": {
       "build": {
