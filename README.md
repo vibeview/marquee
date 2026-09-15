@@ -10,7 +10,7 @@ working VibeView setup for an Expo + react-native-tvos project: cloud
 builds for tvOS and Android TV, device verification by a coding agent
 driving focus with the d-pad, signing, and store submission. Read how it
 was built and shipped, with every command and its output, at
-https://vibeview.io/guides/ai-agent-shipped-apple-tv-android-tv-app/ (write-up link placeholder). Copy
+https://vibeview.io/guides/ai-agent-shipped-apple-tv-android-tv-app/. Copy
 `vibeview.json` and the two config plugins into your own project; do not
 expect much from the app itself.
 
