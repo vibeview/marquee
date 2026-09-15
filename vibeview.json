@@ -10,18 +10,27 @@
         "artifact": "ios/build/Build/Products/Debug-appletvsimulator/*.app",
         "env": {
           "EXPO_TV": "1"
-        }
+        },
+        "productionCommand": "npm ci && npx expo prebuild --platform ios && xcodebuild archive -workspace ios/Marquee.xcworkspace -scheme Marquee -configuration Release -destination 'generic/platform=tvOS' -archivePath ios/build/Marquee.xcarchive ${VIBEVIEW_CODE_SIGN_IDENTITY:+\"CODE_SIGN_IDENTITY=$VIBEVIEW_CODE_SIGN_IDENTITY\"} && xcodebuild -exportArchive -archivePath ios/build/Marquee.xcarchive -exportPath ios/build -exportOptionsPlist \"$VIBEVIEW_EXPORT_OPTIONS_PLIST\"",
+        "productionArtifact": "ios/build/*.ipa",
+        "autoIncrement": true
       }
     },
     "androidtv": {
+      "appId": "marquee-x957hbxu",
       "build": {
         "command": "npm ci && npx expo prebuild --platform android --no-install && cd android && ./gradlew assembleDebug -PreactNativeArchitectures=x86,x86_64",
         "artifact": "android/app/build/outputs/apk/debug/*.apk",
         "env": {
           "EXPO_TV": "1"
-        }
+        },
+        "productionCommand": "npm ci && npx expo prebuild --platform android --no-install && cd android && ./gradlew bundleRelease",
+        "productionArtifact": "android/app/build/outputs/bundle/release/*.aab",
+        "autoIncrement": true
       },
-      "appId": "marquee-x957hbxu"
+      "submit": {
+        "track": "internal"
+      }
     }
   }
 }
